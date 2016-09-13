@@ -8,31 +8,52 @@
 	.locals init(
 		int32 x,
 		int32 y,
-		int32 z
+		int32 z,
+		class Operation obj
 	)
 	
+	newobj void Operation::.ctor()
+	stloc obj
+	ldloc obj
+	
 	ldstr "x="
-	call int32 GetNumber(string)
+	call int32 Operation::GetNumber(string)
 	stloc x
 	
 	ldstr "y="
-	call int32 GetNumber(string)
+	call int32 Operation::GetNumber(string)
 	stloc y
 	
 	ldloc x
 	ldloc y
-	call int32 Sum(int32 x, int32 y)
+	call int32 Operation::Sum(int32 x, int32 y)
 	stloc z
 	
 	ldloc x
 	ldloc y
 	ldloc z
-	call void SumPrint(int32 x, int32 y, int32 z)
+	call void Operation::SumPrint(int32 x, int32 y, int32 z)
+	
+	pop
 	
 	.entrypoint
 	ret
 	
 }
+
+.class public Operation
+{
+	.method void .ctor()
+	{
+		.maxstack 1
+		ldarg.0
+		call instance void [mscorlib]System.Object::.ctor()
+		ret
+	}
+}
+
+.class Operation 
+{
 
 .method static int32 GetNumber(string varName)
 {
@@ -67,4 +88,14 @@
 	call void [mscorlib]System.Console::WriteLine(string, object, object, object)
 	
 	ret
+}
+
+.method void .ctor()
+	{
+		.maxstack 1
+		ldarg.0
+		call instance void [mscorlib]System.Object::.ctor()
+		ret
+	}
+
 }
