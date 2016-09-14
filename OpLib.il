@@ -1,6 +1,6 @@
 .assembly OpLib 
 {
-	.ver 2:0:0:0
+	.ver 4:0:0:0
 }
 
 .class public Operation 
@@ -20,6 +20,30 @@
 	ldarg x
 	ldarg y
 	add
+	ret
+}
+
+.method public static int32 Sub(int32 x, int32 y)
+{
+	ldarg x
+	ldarg y
+	sub
+	ret
+}
+
+.method public static int32 Mul(int32 x, int32 y)
+{
+	ldarg x
+	ldarg y
+	mul
+	ret
+}
+
+.method public static int32 Div(int32 x, int32 y)
+{
+	ldarg x
+	ldarg y
+	div
 	ret
 }
 

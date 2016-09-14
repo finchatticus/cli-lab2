@@ -1,9 +1,9 @@
 .assembly extern OpLib {
-	.ver 2:0:0:0
+	.ver 4:0:0:0
 }
 .assembly Lab2Assembly
 {
-	.ver 2:0:0:0
+	.ver 4:0:0:0
 }
 
 .method static void Main()
