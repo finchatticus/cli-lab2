@@ -1,6 +1,6 @@
 .assembly OpLib 
 {
-	.ver 4:0:0:0
+	.ver 5:0:0:0
 }
 
 .class public Operation 
@@ -47,9 +47,9 @@
 	ret
 }
 
-.method public static void SumPrint(int32 x, int32 y, int32 z)
+.method public static void Print(int32 x, int32 y, int32 z)
 {
-	ldstr "{0}+{1}={2}"
+	ldstr "{0}^3-{1}^3={2}"
 	
 	ldarg x
 	box int32
