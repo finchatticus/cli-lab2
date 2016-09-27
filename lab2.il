@@ -3,7 +3,7 @@
 }
 .assembly Lab2Assembly
 {
-	.ver 5:0:0:0
+	.ver 6:0:0:0
 }
 
 .method static void Main()
@@ -13,11 +13,6 @@
 		int32 y,
 		int32 s1,
 		int32 s2,
-		int32 s3,
-		int32 s4,
-		int32 s5,
-		int32 s6,
-		int32 s7,
 		class [OpLib]Operation obj
 	)
 	
@@ -35,43 +30,23 @@
 	
 	ldloc x
 	ldloc y
-	call int32 [OpLib]Operation::Sub(int32 x, int32 y)
+	call int32 [OpLib]Operation::Left(int32 x, int32 y)
 	stloc s1
 	
 	ldloc x
-	ldloc x
-	call int32 [OpLib]Operation::Mul(int32 x, int32 x)
+	ldloc y
+	call int32 [OpLib]Operation::Right(int32 x, int32 y)
 	stloc s2
-
+	
 	ldloc x
 	ldloc y
-	call int32 [OpLib]Operation::Mul(int32 x, int32 y)
-	stloc s3
-	
-	ldloc s2
-	ldloc s3
-	call int32 [OpLib]Operation::Sum(int32 s2, int32 s3)
-	stloc s4
-	
-	ldloc y
-	ldloc y
-	call int32 [OpLib]Operation::Mul(int32 y, int32 y)
-	stloc s5
-	
-	ldloc s4
-	ldloc s5
-	call int32 [OpLib]Operation::Sum(int32 s4, int32 s5)
-	stloc s6
-	
 	ldloc s1
-	ldloc s6
-	call int32 [OpLib]Operation::Mul(int32 s1, int32 s6)
-	stloc s7
+	call void [OpLib]Operation::PrintLeft(int32 x, int32 y, int32 s1)
 	
 	ldloc x
 	ldloc y
-	ldloc s7
-	call void [OpLib]Operation::Print(int32 x, int32 y, int32 s7)
+	ldloc s1
+	call void [OpLib]Operation::PrintRight(int32 x, int32 y, int32 s1)
 	
 	pop
 	
