@@ -24,14 +24,14 @@
 	call int32 [OpLib]Operation::GetNumber(string)
 	stloc x
 	
-	ldstr "b="
+	ldstr "b=" //Push a string object for the literal string.
 	call int32 [OpLib]Operation::GetNumber(string)
 	stloc y
 	
-	ldloc x
+	ldloc x //Load local variable of index indx onto stack.
 	ldloc y
 	call int32 [OpLib]Operation::Left(int32 x, int32 y)
-	stloc s1
+	stloc s1 //Pop a value from stack into local variable indx.
 	
 	ldloc x
 	ldloc y
@@ -48,9 +48,9 @@
 	ldloc s1
 	call void [OpLib]Operation::PrintRight(int32 x, int32 y, int32 s1)
 	
-	pop
+	pop //Pop value from the stack.
 	
 	.entrypoint
-	ret
+	ret //Return from method, possibly with a value.
 	
 }

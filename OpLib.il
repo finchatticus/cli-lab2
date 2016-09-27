@@ -17,7 +17,7 @@
 
 .method public static int32 Sum(int32 x, int32 y)
 {
-	ldarg x
+	ldarg x //Load argument numbered num onto the stack.
 	ldarg y
 	add
 	ret
@@ -61,7 +61,7 @@
 		int32 x3
 	)
 	
-	ldarg x
+	ldarg x //Load argument numbered num onto the stack.
 	ldarg x
 	call int32 Operation::Mul(int32 x, int32 x)
 	stloc x2
